@@ -21,6 +21,9 @@ import Registration from "./pages/Registration";
 import CropAdvisory from "./pages/CropAdvisory";
 import Community from "./pages/Community";
 import Mycrop from "./pages/Mycrop";
+import CropPlanner from "./pages/CropPlanner";
+import FarmerAlerts from "./pages/FarmerAlerts";
+
 
 import FPO from "./pages/FPO";
 import Inventory from "./pages/Inventory";
@@ -72,6 +75,9 @@ const App = () => {
           <Route path="inventory" element={<Inventory />} />
           <Route path="mycrop" element={<Mycrop />} />
           <Route path="soiladvisory" element={<SoilAdvisory />} />
+          <Route path="cropplanner" element={<CropPlanner />} />
+          <Route path="farmeralerts" element={<FarmerAlerts />} />
+
          
 
         </Route>

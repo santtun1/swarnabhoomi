@@ -43,7 +43,7 @@ const Weather = () => {
             { day: "Friday", condition: "Sunny", temperature: "31°C", humidity: "40%", windSpeed: "9 km/h" },
           ],
           advice: "Due to upcoming rain on Monday, avoid pesticide spraying. Plan irrigation accordingly.",
-          alert: "Severe storm expected on Thursday. Take necessary precautions."
+          alert: "Severe storm expected on Thursday. Take necessary precautions.",
         };
 
         setWeatherData(mockWeatherData);
@@ -62,17 +62,17 @@ const Weather = () => {
   }
 
   return (
-    <div className="bg-gradient-to-br from-blue-100 via-white to-green-100 min-h-screen py-10 px-4">
+    <div className="bg-white min-h-screen py-10 px-4">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-center text-gray-800 mb-8 drop-shadow-sm">{location}</h1>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-center text-gray-800 mb-8">{location}</h1>
 
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Current Weather */}
-          <div className="backdrop-blur-md bg-white/80 p-6 rounded-2xl shadow-xl transition-all duration-300 hover:scale-[1.02]">
+          <div className="bg-white border p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:scale-105">
             <h2 className="text-2xl font-bold text-blue-700 mb-4 text-center">Current Weather</h2>
             <div className="flex items-center justify-center gap-6">
-              <CloudSun className="h-20 w-20 text-yellow-500 animate-pulse" />
+              <CloudSun className="h-20 w-20 text-yellow-500" />
               <div className="space-y-2 text-lg font-medium">
                 <p className="text-2xl text-gray-800 font-semibold">{weatherData?.current.condition}</p>
                 <p className="text-gray-600 flex items-center">
@@ -89,7 +89,7 @@ const Weather = () => {
           </div>
 
           {/* Advice + Alert */}
-          <div className="backdrop-blur-md bg-white/80 p-6 rounded-2xl shadow-xl text-center transition-all duration-300 hover:scale-[1.02]">
+          <div className="bg-white border p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:scale-105 text-center">
             <h2 className="text-2xl font-bold text-blue-700 mb-4">Weather Advice</h2>
             <p className="text-gray-700 text-lg font-medium">{weatherData?.advice}</p>
             {weatherData?.alert && (
@@ -104,7 +104,7 @@ const Weather = () => {
         <div className="my-10 border-t border-gray-300" />
 
         {/* Forecast Table */}
-        <div className="bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-xl overflow-x-auto transition-all duration-300 hover:scale-[1.01]">
+        <div className="bg-white border p-6 rounded-2xl shadow-md overflow-x-auto hover:shadow-xl transition">
           <h2 className="text-2xl font-bold text-center text-blue-700 mb-4">5-Day Weather Forecast</h2>
           <table className="w-full text-left border-collapse">
             <thead>

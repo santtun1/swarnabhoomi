@@ -69,7 +69,7 @@ const Dashboard = () => {
 
 
         {/* Crop Planner */}
-        <Link to="/dashboard/crop-planner" className="bg-white p-6 rounded-lg shadow-md flex items-center space-x-4 min-h-[250px] hover:bg-gray-100 transition">
+        <Link to="/dashboard/cropplanner" className="bg-white p-6 rounded-lg shadow-md flex items-center space-x-4 min-h-[250px] hover:bg-gray-100 transition">
           <Leaf className="h-16 w-16 text-green-600" />
           <div>
             <h3 className="text-2xl font-semibold">Crop Planner</h3>
@@ -78,7 +78,7 @@ const Dashboard = () => {
         </Link>
 
         {/* Farming Alerts */}
-        <Link to="/dashboard/alerts" className="bg-white p-6 rounded-lg shadow-md flex items-center space-x-4 min-h-[250px] hover:bg-gray-100 transition">
+        <Link to="/dashboard/farmeralerts" className="bg-white p-6 rounded-lg shadow-md flex items-center space-x-4 min-h-[250px] hover:bg-gray-100 transition">
           <Bell className="h-16 w-16 text-red-500" />
           <div>
             <h3 className="text-2xl font-semibold">Farming Alerts</h3>

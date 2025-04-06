@@ -1,7 +1,6 @@
-import { useState } from "react";
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, BarChart, Bar } from "recharts";
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
-const selectedCrops = ["Wheat", "Rice", "Potato"]; // User-selected crops
+const selectedCrops = ["Wheat", "Rice", "Potato"]; // User-selected crops from registration
 
 const weeklyPriceTrends = {
   Wheat: [2200, 2250, 2180, 2300, 2350, 2400, 2380],
@@ -20,22 +19,23 @@ const getPriceTrendData = (crop) =>
 
 const MyCrop = () => {
   return (
-    <div className="p-6">
-      <h2 className="text-3xl font-bold text-center mb-6 text-green-700">🌾 Your Crop Price Dashboard</h2>
-      
+    <div className="p-8 bg-gradient-to-br from-green-50 via-white to-lime-50 min-h-screen">
+      <h2 className="text-4xl font-bold text-center mb-2 text-green-800">👨‍🌾 Welcome to Your Crop Dashboard</h2>
+      <p className="text-center text-lg text-gray-600 mb-10">Get real-time updates and trends for your selected crops.</p>
+
       {/* Weekly Price Trends */}
-      <div className="mb-8">
-        <h3 className="text-2xl font-semibold mb-3">📊 Weekly Price Trends</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="mb-12">
+        <h3 className="text-2xl font-semibold text-green-700 mb-6">📈 Weekly Price Trends</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {selectedCrops.map((crop) => (
-            <div key={crop} className="border rounded-lg p-4 shadow-lg bg-white flex flex-col items-center">
-              <h4 className="text-xl font-semibold text-blue-700 mb-2">{crop}</h4>
-              <ResponsiveContainer width="100%" height={150}>
+            <div key={crop} className="bg-white rounded-2xl shadow-lg p-5 flex flex-col items-center hover:shadow-2xl transition-all duration-300">
+              <h4 className="text-xl font-semibold text-blue-700 mb-3">{crop}</h4>
+              <ResponsiveContainer width="100%" height={180}>
                 <LineChart data={getPriceTrendData(crop)}>
                   <XAxis dataKey="day" tick={{ fontSize: 12 }} />
                   <YAxis tick={{ fontSize: 12 }} />
                   <Tooltip />
-                  <Line type="monotone" dataKey="price" stroke="#2d89ef" strokeWidth={3} />
+                  <Line type="monotone" dataKey="price" stroke="#38a169" strokeWidth={3} />
                 </LineChart>
               </ResponsiveContainer>
             </div>
@@ -45,13 +45,13 @@ const MyCrop = () => {
 
       {/* Best Mandi Rates */}
       <div>
-        <h3 className="text-2xl font-semibold mb-3">🏬 Best Market Prices</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <h3 className="text-2xl font-semibold text-green-700 mb-6">🏪 Best Market Prices Today</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {mandiRates.map((mandi, index) => (
-            <div key={index} className="border rounded-lg p-4 shadow-lg bg-white flex flex-col items-center">
-              <h4 className="text-xl font-semibold text-green-700 mb-1">{mandi.Commodity}</h4>
-              <p className="text-lg font-medium text-gray-700">{mandi.Market}</p>
-              <p className="text-lg font-bold text-blue-700">₹{mandi.Price}</p>
+            <div key={index} className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center hover:shadow-xl transition-all">
+              <h4 className="text-xl font-bold text-lime-700 mb-1">{mandi.Commodity}</h4>
+              <p className="text-base text-gray-600 mb-1">📍 {mandi.Market}</p>
+              <p className="text-2xl font-bold text-blue-600">₹{mandi.Price}</p>
             </div>
           ))}
         </div>
