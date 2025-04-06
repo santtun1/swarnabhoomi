@@ -4,8 +4,8 @@ const topics = [
   { id: 1, title: "How to Join an FPO", image: "/fpo.jpg" },
   { id: 2, title: "Best Farming Practices", image: "/farming.jpeg" },
   { id: 3, title: "Government Schemes & Subsidies", image: "/schemes.jpeg" },
-  { id: 4, title: "Market Trends & Crop Pricing", image: "market_trends.jpg" },
-  { id: 5, title: "AI-Based Farming Techniques", image: "ai_farming.jpg" },
+  { id: 4, title: "Market Trends & Crop Pricing", image: "/cp.png" },
+  { id: 5, title: "AI-Based Farming Techniques", image: "/ai_farming.png" },
 ];
 
 const Learning = () => {

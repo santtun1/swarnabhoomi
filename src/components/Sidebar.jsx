@@ -1,25 +1,33 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Home, Cloud, Leaf, BarChart3, Settings, Network, User } from "lucide-react";
+import {
+  Home,
+  BookOpen,
+  Leaf,
+  BarChart3,
+  Settings,
+  Network,
+  Users,
+  ShoppingCart,
+  MessageSquare,
+  BadgeIndianRupee,
+  ClipboardList,
+  UserCheck,
+} from "lucide-react";
 
 const Sidebar = ({ isSidebarOpen }) => {
   const location = useLocation();
 
   const menuItems = [
-    { name: "Dashboard", path: "/dashboard", icon: <Home /> },
-    { name: "Advisory", path: "/dashboard/advisory", icon: <User /> },
-    { name: "Soil Health", path: "/dashboard/soiladvisory", icon: <BarChart3 /> },
-    { name: "FPO", path: "/dashboard/fpo", icon: <Network /> },
-    { name: "Mandi Rates", path: "/dashboard/market-prices", icon: <Network /> },
-    { name: "Market", path: "/dashboard/market", icon: <User /> },
-    { name: "Schemes", path: "/dashboard/schemes", icon: <User /> },
-    { name: "Learning", path: "/dashboard/learning", icon: <Network /> },
-    { name: "community", path: "/dashboard/community", icon: <Network /> },
- 
-  
-    
-    
- 
+    { name: "Dashboard", path: "/dashboard", icon: <Home size={20} /> },
+    { name: "Advisory", path: "/dashboard/advisory", icon: <UserCheck size={20} /> },
+    { name: "Soil Health", path: "/dashboard/soiladvisory", icon: <Leaf size={20} /> },
+    { name: "FPO", path: "/dashboard/fpo", icon: <Users size={20} /> },
+    { name: "Mandi Rates", path: "/dashboard/market-prices", icon: <BadgeIndianRupee size={20} /> },
+    { name: "Market", path: "/dashboard/market", icon: <ShoppingCart size={20} /> },
+    { name: "Schemes", path: "/dashboard/schemes", icon: <ClipboardList size={20} /> },
+    { name: "Learning", path: "/dashboard/learning", icon: <BookOpen size={20} /> },
+    { name: "Community", path: "/dashboard/community", icon: <MessageSquare size={20} /> },
   ];
 
   return (
@@ -38,7 +46,11 @@ const Sidebar = ({ isSidebarOpen }) => {
               }`}
             >
               {item.icon}
-              <span className={`${isSidebarOpen ? "block" : "hidden"} transition-all duration-300`}>
+              <span
+                className={`${
+                  isSidebarOpen ? "block" : "hidden"
+                } transition-all duration-300`}
+              >
                 {item.name}
               </span>
             </Link>
@@ -48,6 +60,5 @@ const Sidebar = ({ isSidebarOpen }) => {
     </div>
   );
 };
-
 
 export default Sidebar;
