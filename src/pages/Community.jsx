@@ -43,6 +43,42 @@ const Community = () => {
         "https://images.unsplash.com/photo-1535905557558-afc4877a26fc?auto=format&fit=crop&w=800&q=80",
       likes: 23,
     },
+    {
+      id: "demo4",
+      user: "Kiran Mali",
+      text: "Early morning irrigation done! Water management is key during this season. 💧🌱",
+      image: "https://www.agrivi.com/wp-content/uploads/2016/05/Blog-Proper-irrigation.png",
+      likes: 12,
+    },
+    {
+      id: "demo5",
+      user: "Sita Devi",
+      text: "Look at my blooming mustard field! Yellow magic everywhere. 🌼🌿",
+      image: "https://thumbs.dreamstime.com/b/field-dijon-mustard-famous-grown-burgundy-france-61675050.jpg",
+      likes: 18,
+    },
+    {
+      id: "demo6",
+      user: "Farmer Veer Singh",
+      text: "Experimenting with organic compost this season. Will share the results soon! 🌿🧪",
+      image: "https://i.pinimg.com/736x/9d/bf/70/9dbf7033c2f6838066f5e12ccc3526ce--compost-soil-organic-compost.jpg",
+      likes: 7,
+    },
+    {
+      id: "demo7",
+      user: "Radha Bhai",
+      text: "Cattle are healthy and grazing freely today. Happy cows = happy farm! 🐄🌾",
+      image: "https://media.istockphoto.com/id/519861662/photo/cows-on-green-meadow.jpg?s=612x612&w=0&k=20&c=vOLNeGBBzz5pOu2GkzUxcYkRtybpmaEB5EUBpzrSHG4=",
+      likes: 21,
+    },
+    {
+      id: "demo8",
+      user: "Bharat Kishan",
+      text: "Sunset over the paddy field hits different 🌅🌾",
+      image: "https://live.staticflickr.com/4475/37707578286_ac67bcf650_b.jpg",
+      likes: 935,
+    }
+    
   ];
 
   useEffect(() => {
