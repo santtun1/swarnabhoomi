@@ -17,7 +17,7 @@ const CropAdvisory = () => {
     };
      
     //data fetching point 
-    const API_URL = "http://localhost:5000/api/advisory"; 
+    const API_URL = "https://ab-l3cf.onrender.com/api/advisory"; 
 
     const fetchAdvisory = async () => {
         if (!location || !cropType || !cropName || !activity) {
