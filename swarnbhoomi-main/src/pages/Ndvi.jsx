@@ -139,22 +139,22 @@ const NdviFarms = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-6">
+    <div className="max-w-10xl mx-auto ml-2 ">
       <div className="flex justify-between items-center mb-6">
         <div className="flex gap-2 items-center">
           <button onClick={() => navigate(-1)} className="hover:text-green-700">
             <ArrowLeft size={20} />
           </button>
-          <h1 className="text-xl font-bold text-green-800">NDVI Farm Trends</h1>
+          <h1 className="text-xl font-bold text-green-800">NDVI Trend Of Your Crop</h1>
         </div>
-        <button onClick={addFarm} className="bg-blue-600 text-white px-4 py-2 hover:bg-blue-700">➕ Add Farm</button>
+        <button onClick={addFarm} className="bg-blue-600 text-white px-4 py-2 mt-3 hover:bg-blue-700">➕ Add Farm</button>
       </div>
 
       {farms.map((farm) => (
         <div key={farm.id} className="mb-10 border border-gray-300 p-4 bg-white">
           <div className="flex justify-between items-center mb-2">
             <h2 className="text-lg font-semibold text-green-700">{farm.name}</h2>
-            <button onClick={() => removeFarm(farm.id, farm.firestoreId)} className="text-sm text-red-600 hover:underline">🗑️ Remove Farm</button>
+            <button onClick={() => removeFarm(farm.id, farm.firestoreId)} className="text-sm text-red-600 hover:underline">🗑 Remove Farm</button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-6 gap-3 mb-4">
@@ -164,7 +164,7 @@ const NdviFarms = () => {
             <input type="number" placeholder="Longitude" value={farm.lng} onChange={(e) => updateFarmField(farm.id, "lng", e.target.value)} className="border p-2" />
             <input type="number" placeholder="Weeks" value={farm.weeks} onChange={(e) => updateFarmField(farm.id, "weeks", e.target.value)} className="border p-2" />
             <div className="flex gap-2">
-              <button onClick={() => updateFarmField(farm.id, "showMap", !farm.showMap)} className="bg-yellow-600 text-white px-3 py-2 hover:bg-yellow-700">🗺️ Pick on Map</button>
+              <button onClick={() => updateFarmField(farm.id, "showMap", !farm.showMap)} className="bg-yellow-600 text-white px-3 py-2 hover:bg-yellow-700">🗺 Pick on Map</button>
               <button onClick={() => saveLocation(farm.id)} className="bg-green-600 text-white px-3 py-2 hover:bg-green-700">💾 Save Location</button>
             </div>
           </div>
@@ -173,7 +173,10 @@ const NdviFarms = () => {
             <div className="h-[300px] w-full mb-4">
               <GoogleMap
                 mapContainerStyle={{ width: "100%", height: "100%" }}
-                center={{ lat: parseFloat(farm.lat || 25.5), lng: parseFloat(farm.lng || 82.5) }}
+                center={{
+                  lat: farm.lat ? parseFloat(farm.lat) : 25.5,
+                  lng: farm.lng ? parseFloat(farm.lng) : 82.5
+                }}
                 zoom={6}
                 onClick={(e) => {
                   const lat = e.latLng.lat();

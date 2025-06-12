@@ -11,7 +11,7 @@ const CommodityPrices = () => {
   useEffect(() => {
     const fetchPrices = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/mandi-prices", {
+        const res = await axios.get("https://swarnabhumi-backend.onrender.com/api/mandi-prices", {
           params: { commodity: name }
         });
         setData(res.data);
@@ -56,7 +56,7 @@ const CommodityPrices = () => {
             onClick={() => navigate(-1)}
             className="bg-blue-600 text-white px-5 py-2 text-sm hover:bg-blue-700 transition"
           >
-            ⬅️ Back
+            ⬅ Back
           </button>
         </div>
       </div>
@@ -65,7 +65,7 @@ const CommodityPrices = () => {
       {loading ? (
         <p className="text-center text-lg animate-pulse text-gray-600">⏳ Fetching latest prices...</p>
       ) : data.length === 0 ? (
-        <p className="text-center text-red-500 text-lg">⚠️ No price data found for {name}.</p>
+        <p className="text-center text-red-500 text-lg">⚠ No price data found for {name}.</p>
       ) : (
         <>
           {/* Best Market Highlight */}
