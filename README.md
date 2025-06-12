@@ -80,7 +80,7 @@ Swarnbhoomi addresses the key challenges of Indian agriculture—like unpredicta
 
 1. **Clone the repository:**
     ```sh
-    git clone https://github.com/YOUR-ORG/swarnbhoomi.git
+    git clone https://github.com/santtun1/swarnabhoomi.git
     cd swarnbhoomi
     ```
 2. **Install dependencies:**
@@ -106,7 +106,7 @@ Built using React Native and Expo for cross-platform support.
    - Expo CLI (`npm install -g expo-cli`)
 2. **Clone the mobile app repo:**  
     ```sh
-    git clone https://github.com/YOUR-ORG/swarnbhoomi-mobile.git
+    git clone https://github.com/santtun1/swarnbhoomi-mobile.git
     cd swarnbhoomi-mobile
     ```
 3. **Install dependencies:**  
